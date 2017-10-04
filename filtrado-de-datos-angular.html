@@ -1,0 +1,54 @@
+<!doctype html>
+<html data-ng-app="agenda">
+    <head>
+        <meta charset="utf-8">
+        <title>Filtrado de datos en AngularJS</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+    </head>
+    <body>
+        
+        <div ng-controller="controlador1">
+            
+            
+        
+            <h1>Agenda telefonica</h1>
+            
+            
+            <p ng-repeat = "entrada in agenda | filter: busqueda    ">
+            
+                {{entrada.nombre}} : {{entrada.telefono}}
+            
+            </p>
+           
+            
+            
+        </div>
+        
+        
+        <script>
+        
+            var miAplicacion = angular.module('agenda' , [])
+            
+            miAplicacion.controller ('controlador1' , ['$scope' , function($scope){
+                
+                
+               $scope.agenda =[
+                   
+                   {nombre:'Lincy', telefono:'01-2250-1675'},
+                   {nombre:'miguel', telefono:'04248416517'},
+                   {nombre:'yurisma', telefono:'04121172688'},
+                   {nombre:'mama', telefono:'02934184370'},
+               ]
+                
+                
+            }])
+            
+            
+           
+        
+        </script>
+        
+      
+        
+    </body>
+</html>    

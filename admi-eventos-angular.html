@@ -1,0 +1,46 @@
+<!doctype html>
+<html data-ng-app="accion">
+    <head>
+        <meta charset="utf-8">
+        <title>Filtrado de datos en AngularJS</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+    </head>
+    <body>
+        
+        <div ng-controller="controlador1"> 
+            
+            
+        
+            <button ng-click = "clickSimple()"> Click</button>
+            <button ng-dblclick = "clickDoble()"> Click</button>
+           
+            <h1>{{evento}}</h1>
+            
+        </div>
+        
+        
+        <script>
+        
+            var miAplicacion = angular.module('accion' , [])
+            
+            miAplicacion.controller ('controlador1' , ['$scope' , function($scope){
+                
+                
+                $scope.clickSimple = function(){
+                    $scope.evento = "click"
+                }
+                
+                $scope.clickDoble = function(){
+                    $scope.evento = "doble"                    
+                }
+            }])
+            
+            
+           
+        
+        </script>
+        
+      
+        
+    </body>
+</html>    

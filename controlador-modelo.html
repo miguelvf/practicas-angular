@@ -1,0 +1,53 @@
+<!doctype html>
+<html data-ng-app="tiendaDeFruta">
+    <head>
+        <meta charset="utf-8">
+        <title>Insertar controladores en AngularJS</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+    </head>
+    <body>
+        
+        <div ng-controller="controlador1">
+        
+        <h1>Promocion de mangos</h1>
+        <h2>$2.15 cada uno</h2>
+            
+        <label>Cantidad de mangos:</label>
+        <input type="text" ng-model="cantidad">
+            
+        <br>
+        
+            Precio total:  {{cantidad * precio | currency}}
+            
+        </div>
+        
+        <br>
+        
+        <div ng-controller="controlador2"> 
+         
+            <h1>nombre: {{nombre}} </h1>
+        
+        </div>
+        
+        <script>
+        
+            var miAplicacion = angular.module('tiendaDeFruta' , [])
+            
+            miAplicacion.controller ('controlador1' , ['$scope' , function($scope){
+                
+                $scope.cantidad = 0
+                $scope.precio = 2.15
+            }])
+            
+            
+            miAplicacion.controller ('controlador2' , ['$scope' , function($scope){
+                
+                $scope.nombre = "Miguel Vargas, prueba de un 2do controlador"
+            }])
+        
+        </script>
+        
+      
+        
+    </body>
+</html>    
